@@ -1,0 +1,8 @@
+{
+  "watch": ["server", ".env"],
+  "verbose": true,
+  "ignore": [
+    ".git",
+    "node_modules/"
+  ]
+}
