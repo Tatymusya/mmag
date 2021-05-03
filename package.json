@@ -4,8 +4,9 @@
   "description": "MmaG - shop of everything in the world and all sorts of nonsense",
   "main": "index.js",
   "scripts": {
-    "start": "env-cmd webpack serve --progress --analyze",
-    "start:server": "env-cmd nodemon --config nodemon.json ./server/app.js",
+    "dev": "env-cmd webpack serve --config webpack/webpack.dev.config.js --progress --analyze",
+    "prod": "env-cmd webpack --config webpack/webpack.prod.config.js",
+    "server": "env-cmd nodemon --config nodemon.json ./server/app.js",
     "lint:write": "eslint ./**/*.js --fix",
     "test": "jest --colors"
   },
@@ -23,7 +24,7 @@
     "type": "git",
     "url": "git+https://github.com/Tatymusya/mmag.git"
   },
-  "author": "",
+  "author": "Tatyana Musaeva <tatykolcova@gmail.com>",
   "devDependencies": {
     "@babel/cli": "^7.13.10",
     "@babel/core": "^7.13.13",
@@ -39,6 +40,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.0",
+    "css-minimizer-webpack-plugin": "^2.0.0",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-import-resolver-alias": "^1.1.2",
@@ -74,7 +76,8 @@
     "webpack-cli": "^4.6.0",
     "webpack-dev-middleware": "^4.1.0",
     "webpack-dev-server": "^3.11.2",
-    "webpack-hot-middleware": "^2.25.0"
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "^5.7.3"
   },
   "dependencies": {
     "axios": "^0.21.1",
