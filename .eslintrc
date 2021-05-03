@@ -1,0 +1,45 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:vue/recommended",
+    "prettier",
+    "prettier/vue"
+  ],
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module"
+  },
+  "plugins": ["prettier", "vue", "import"],
+  "settings": {
+    "import/extensions": [
+      ".js",
+      ".vue"
+    ],
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@", "./src/"]
+        ]
+      },
+      "node": {
+        "extensions": [".js"]
+      }
+    }
+  },
+  "rules": {
+    "no-console": "off",
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": [
+      "error", 
+      { "devDependencies": true }
+    ],
+    "no-underscore-dangle": "off"
+  }
+} 
