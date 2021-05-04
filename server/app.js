@@ -1,16 +1,16 @@
 /* eslint-disable import/extensions */
-import path from 'path';
+import cors from 'cors';
 import express from 'express';
+import morgan from 'morgan';
+import path from 'path';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import cors from 'cors';
-import morgan from 'morgan';
 import config from '../webpack/webpack.dev.config.js';
 import createServerAndListen from './lib/server.js';
 
 const corsOptions = {
-  origin: 'https://localhost:9007'
+  origin: 'https://localhost:9007',
 };
 const dirname = path.resolve();
 const compiler = webpack(config);
@@ -34,10 +34,10 @@ const main = async () => {
       .catch((err) => {
         console.error(err);
       });
-  } catch(e) {
+  } catch (e) {
     console.error(e);
   }
-}
+};
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(dirname, 'dist', 'index.html'));

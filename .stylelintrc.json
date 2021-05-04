@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "stylelint-config-sass-guidelines", 
+    "stylelint-config-rational-order",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+		"stylelint-order"
+	],
+  "defaultSeverity": "warning",
+	"rules": {
+    "order/properties-alphabetical-order":  null,
+    "plugin/rational-order": [
+      true,
+      {
+        "border-in-box-model": false,
+        "empty-line-between-groups": false
+      }
+    ]
+	}
+}
