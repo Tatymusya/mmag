@@ -29,7 +29,7 @@ const main = async () => {
   try {
     createServerAndListen(app)
       .then(() => {
-        job.start();
+        // job.start();
       })
       .catch((err) => {
         console.error(err);

@@ -1,0 +1,55 @@
+/* Roboto Regular (Latin) */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: local('Roboto Regular'), local('Roboto-Regular'),
+    url('./assets/fonts/Roboto/Roboto-Regular-lat.woff2') format('woff2'),
+    url('./assets/fonts/Roboto/Roboto-Regular-lat.woff') format('woff');
+  unicode-range: 0000-007f, 0080-00ff, 0100-017f, 0180-024f, 2000-206f, 2070-209f, 2150-218f;
+}
+
+/* Roboto Regular (Cyrillic) */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: local('Roboto Regular'), local('Roboto-Regular'),
+    url('./assets/fonts/Roboto/Roboto-Regular-cyr.woff2') format('woff2'),
+    url('./assets/fonts/Roboto/Roboto-Regular-cyr.woff') format('woff');
+  unicode-range: U+20-7E, U+401, U+410-44F, U+451, U+A0, U+A2, U+A3, U+A7, U+A9, U+AB, U+B0, U+B1,
+    U+BB, U+D7, U+F7, U+2013, U+2014, U+2018, U+2019, U+201C, U+201D, U+2026, U+20AC, U+20BD, U+2116,
+    U+2122, U+2248, U+2260, U+2264, U+2265;
+}
+
+/* Roboto Bold (Latin) */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+    url('./assets/fonts/Roboto/Roboto-Bold-lat.woff2') format('woff2'),
+    url('./assets/fonts/Roboto/Roboto-Bold-lat.woff') format('woff');
+  unicode-range: 0000-007f, 0080-00ff, 0100-017f, 0180-024f, 2000-206f, 2070-209f, 2150-218f;
+}
+
+/* Roboto Bold (Cyrillic) */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+    url('./assets/fonts/Roboto/Roboto-Bold-cyr.woff2') format('woff2'),
+    url('./assets/fonts/Roboto/Roboto-Bold-cyr.woff') format('woff');
+  unicode-range: U+20-7E, U+401, U+410-44F, U+451, U+A0, U+A2, U+A3, U+A7, U+A9, U+AB, U+B0, U+B1,
+    U+BB, U+D7, U+F7, U+2013, U+2014, U+2018, U+2019, U+201C, U+201D, U+2026, U+20AC, U+20BD, U+2116,
+    U+2122, U+2248, U+2260, U+2264, U+2265;
+}

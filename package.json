@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "env-cmd webpack serve --config webpack/webpack.dev.config.js --progress --analyze",
     "prod": "env-cmd webpack --config webpack/webpack.prod.config.js",
-    "server": "env-cmd nodemon --config nodemon.json ./server/app.js",
+    "start:server": "env-cmd nodemon --config nodemon.json ./server/app.js",
     "eslint:write": "eslint ./**/*.js --fix",
     "stylelint:write": "stylelint src/**/*.{vue,scss} --config .stylelintrc.json  --fix",
     "test": "jest --colors"
@@ -56,6 +56,7 @@
     "jest-environment-node": "^26.6.2",
     "jest-serializer-vue": "^2.0.2",
     "lint-staged": "^10.5.4",
+    "media-query-plugin": "^1.5.0",
     "mini-css-extract-plugin": "^1.4.0",
     "nodemon": "^2.0.7",
     "postcss": "^8.2.9",
@@ -64,6 +65,7 @@
     "prettier-eslint": "^12.0.0",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
+    "sass-resources-loader": "^2.2.1",
     "style-loader": "^2.0.0",
     "stylelint": "^13.12.0",
     "stylelint-config-prettier": "^8.0.2",
