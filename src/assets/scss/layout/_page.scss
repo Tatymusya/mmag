@@ -1,0 +1,43 @@
+.page,
+.page__body {
+  height: 100%;
+}
+
+.page__wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2.8rem;
+  background: var(--base-light-gray-color, #f4f4f4);
+}
+
+.page__header {
+  position: relative;
+
+  @include breakpoint-up(md) {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.page__main {
+  flex: 1;
+}
+
+.page__footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.8rem;
+}
+
+@supports (display: flex) {
+  .page__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+
+  .page__footer {
+    all: unset;
+  }
+}

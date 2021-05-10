@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Meta from 'vue-meta';
-import store from '@/store/index';
+// import store from '@/store/index';
 import router from '@/router/index';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
@@ -13,7 +13,7 @@ Vue.use(Meta);
 Vue.use(VueAxios, axios);
 
 const app = new Vue({
-  store,
+  // store,
   router,
   render: (h) => h(App, { class: 'page__wrapper' }),
 });
