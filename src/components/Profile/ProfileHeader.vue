@@ -36,7 +36,12 @@ export default {
   --gap-profile-link: var(--base-unit, 0.6rem);
   display: flex;
 }
-.profile__link {
+
+.profile__link:not(:last-child) {
   margin: 0 var(--gap-profile-link);
+}
+
+.profile__link:last-child {
+  margin: 0 0 0 var(--gap-profile-link);
 }
 </style>
