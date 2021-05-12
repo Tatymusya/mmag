@@ -1,12 +1,38 @@
 import fs from 'fs';
 import https from 'https';
 import path from 'path';
-import WebSocket from 'ws';
 
+const PORT = process.env.PORT || 9007;
 const dirname = path.resolve();
 
+const onError = (error) => {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  let bind = '';
+
+  if (typeof PORT === 'string') {
+    bind = `Pipe ${PORT}`;
+  }
+
+  if (typeof PORT === 'number') {
+    bind = `Port ${PORT}`;
+  }
+
+  switch (error.code) {
+    case 'EACCES':
+      console.error(`${bind} requires elevated privileges`);
+      process.exit(1);
+    case 'EADDRINUSE':
+      console.error(`${bind} is already in use`);
+      process.exit(1);
+    default:
+      throw error;
+  }
+};
+
 const createServerAndListen = async (app) => {
-  const PORT = process.env.PORT || 9007;
   const server = https.createServer(
     {
       key: fs.readFileSync(
@@ -18,19 +44,8 @@ const createServerAndListen = async (app) => {
     app,
   );
 
-  // const wssPort = process.env.WS_PORT || 6969;
-  const wss = new WebSocket.Server({ server });
-
-  wss.on('connection', function connection(ws) {
-    console.log(ws);
-    /* ws.on('message', function incoming(message) {
-      console.log('received: %s', message);
-    });
-
-    ws.send('something'); */
-  });
-
   server.listen(PORT);
+  server.on('error', onError);
 };
 
 export default createServerAndListen;
