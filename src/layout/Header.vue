@@ -1,6 +1,6 @@
 <template>
   <header class="page__header header">
-    <div class="header__top" v-if="isScreenLargerThan768">
+    <div class="header__top" v-if="isScreenLargerThan">
       <mmag-container-limiter>
         <div class="header__container">
           <p class="header__info">IPsum loem dolor</p>
@@ -37,6 +37,7 @@ import MmagNav from '@/components/Nav/Nav';
 import MmagProfileHeader from '@/components/Profile/ProfileHeader';
 import MmagShoppingCart from '@/components/ShoppingCart/ShoppingCart';
 import MmagChatOpener from '@/components/Chat/ChatOpener';
+import useMediaQuery from '@/utils/useMediaQuery';
 
 export default {
   name: 'MmagHeader',
@@ -52,31 +53,25 @@ export default {
   data() {
     return {
       isRequested: false,
-      screenLargerThan768: window.matchMedia('(min-width: 768px)')
+      screenLargerThan: window.matchMedia('(min-width: 768px)')
     }
   },
   methods: {
     showWidget() {
       this.isRequested = !this.isRequested;
     },
-    useQuery(query, evt) {
-      const mediaQueryList = window.matchMedia(query);
-
-      return this.screenLargerThan768 = evt;
+    useQuery(evt) {
+      return this.screenLargerThan = evt;
     }
   },
   computed: {
-    isScreenLargerThan768() {
-      const mediaQuery = '(min-width: 768px)';
-      if('matchMedia' in window) {
-        const mediaQueryList = window.matchMedia(mediaQuery);
-        mediaQueryList.addEventListener('change', (evt) => this.useQuery(mediaQuery, evt));
-
-        mediaQueryList.removeEventListener('change', this.useQuery);
-        return this.screenLargerThan768.matches;
-      }
+    isScreenLargerThan() {
+      const query = '(min-width: 768px)';
+      useMediaQuery(query, this.useQuery)();
+      return this.screenLargerThan.matches;
     }
-  }
+  },
+
 };
 </script>
 
