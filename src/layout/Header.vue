@@ -1,6 +1,6 @@
 <template>
   <header class="page__header header">
-    <div class="header__top" v-if="isScreenLargerThan">
+    <div class="header__top" v-if="switcherHeaderTopLine">
       <mmag-container-limiter>
         <div class="header__container">
           <p class="header__info">IPsum loem dolor</p>
@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       isRequested: false,
-      screenLargerThan: window.matchMedia('(min-width: 768px)')
+      isScreenLargerThan: window.matchMedia('(min-width: 768px)')
     }
   },
   methods: {
@@ -61,14 +61,14 @@ export default {
       this.isRequested = !this.isRequested;
     },
     useQuery(evt) {
-      return this.screenLargerThan = evt;
+      return this.isScreenLargerThan = evt;
     }
   },
   computed: {
-    isScreenLargerThan() {
+    switcherHeaderTopLine() {
       const query = '(min-width: 768px)';
       useMediaQuery(query, this.useQuery)();
-      return this.screenLargerThan.matches;
+      return this.isScreenLargerThan.matches;
     }
   },
 
